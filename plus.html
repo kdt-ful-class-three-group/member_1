@@ -18,10 +18,22 @@
         flex-direction: column;
         align-items: center;
       }
+      #root > section {
+        width: 95%;
+        display: flex;
+        justify-content: center;
+      }
+      #root > section > form {
+        /* width: 100%; */
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        gap: 10px;
+      }
     </style>
   </head>
   <body>
-    <div #root>
+    <div id="root">
       <h1>아아 샷 추가</h1>
       <section>
         <form action="/add" method="post">
