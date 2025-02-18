@@ -12,6 +12,10 @@ const server = http.createServer((req, res) => {
       res.end();
     }
     if (req.url === "/plus.html") {
+      let page = fs.readFileSync("plus.html");
+      res.writeHead(200, { "content-type": "utf-8;text/html" });
+      res.write(page);
+      res.end();
     }
   }
 });
