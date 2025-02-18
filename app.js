@@ -24,6 +24,8 @@ const server = http.createServer((req, res) => {
     if (req.url === "/add") {
       req.on("data", (data) => {
         console.log(data.toString());
+        let dataObj = qs.stringify(data.toString());
+        console.log(dataObj);
       });
       let page = fs.readFileSync("index.html");
       res.writeHead(200, { "content-location": "/" });
