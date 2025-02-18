@@ -19,6 +19,10 @@ const server = http.createServer((req, res) => {
     }
   }
   //POST
+  if (req.method === "POST") {
+    if (req.url === "/add") {
+    }
+  }
 });
 
 PORT = 3020;
