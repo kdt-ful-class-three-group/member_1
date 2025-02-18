@@ -22,7 +22,7 @@ const server = http.createServer((req, res) => {
   if (req.method === "POST") {
     if (req.url === "/add") {
       req.on("data", (data) => {
-        console.log(data);
+        console.log(data.toString());
       });
     }
   }
