@@ -21,6 +21,9 @@ const server = http.createServer((req, res) => {
   //POST
   if (req.method === "POST") {
     if (req.url === "/add") {
+      req.on("data", (data) => {
+        console.log(data);
+      });
     }
   }
 });
