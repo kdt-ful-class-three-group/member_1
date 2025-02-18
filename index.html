@@ -18,8 +18,14 @@
         flex-direction: column;
         align-items: center;
       }
-      #root > section:first-child {
+      #root > section:first-of-type {
         width: 90%;
+        display: flex;
+        justify-content: center;
+      }
+      section:first-of-type > div {
+        width: 10%;
+        border: 1px solid black;
       }
     </style>
   </head>
