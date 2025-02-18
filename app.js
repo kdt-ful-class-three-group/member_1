@@ -24,7 +24,7 @@ const server = http.createServer((req, res) => {
       req.on("data", (data) => {
         console.log(data.toString());
       });
-      req.end();
+      res.end();
     }
   }
 });
