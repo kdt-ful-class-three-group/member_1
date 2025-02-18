@@ -6,6 +6,31 @@
     <title>IA PLUS</title>
   </head>
   <body>
-    <div #root></div>
+    <div #root>
+      <h1>아아 샷 추가</h1>
+      <section>
+        <form action="/add" method="post">
+          <label for="brand"
+            >커피 브랜드 :
+            <input type="text" name="brand" placeholder="커피 브랜드" />
+          </label>
+          <div>
+            <label for="shot"
+              >샷 :
+              <input type="number" name="shot" placeholder="샷" />
+            </label>
+            <label for="price">
+              가격 :
+              <input
+                type="number"
+                name="price"
+                placeholder="숫자만 입력해주세요"
+              />
+            </label>
+          </div>
+          <button type="submit">추가하기</button>
+        </form>
+      </section>
+    </div>
   </body>
 </html>
