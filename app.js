@@ -3,7 +3,7 @@ const fs = require("fs");
 
 const server = http.createServer((req, res) => {
   //GET
-  console.log(req.url);
+  console.log(req.method, " ", req.url);
   if (req.method === "GET") {
     if (req.url === "/") {
       let page = fs.readFileSync("index.html");
