@@ -2,10 +2,6 @@ const http = require("http");
 const fs = require("fs");
 const qs = require("querystring");
 
-//[ ] 페이지를 js에서 만들면
-//+로 링크 이동 -> button누르면 데이터 가져옴
-//가져온 데이터로 a태그의 href바뀜 -> innerText 변경
-
 const server = http.createServer((req, res) => {
   console.log(`${req.method}  ${req.url}`);
   if (req.method === "GET") {
