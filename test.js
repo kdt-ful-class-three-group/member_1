@@ -7,7 +7,7 @@ const qs = require("querystring");
 // move.html 안에 수정하기 버튼 -> writefile : update
 // move.html 안에 삭제하기 버튼 -> unlink
 
-function movePage() {
+function movePage(obj) {
   let string = `
   <!DOCTYPE html>
 <html lang="en">
@@ -61,6 +61,7 @@ const server = http.createServer((req, res) => {
         console.log(valueData);
         //write
         fs.writeFileSync("coffee.json", JSON.stringify(valueData));
+        let page = fs.writeFileSync("move.html", movePage(valueData));
       });
     }
   }
