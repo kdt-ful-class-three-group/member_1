@@ -55,6 +55,7 @@ const server = http.createServer((req, res) => {
         let valueData = qs.parse(body);
         console.log(valueData);
         //write
+        fs.writeFile("coffee.json", JSON.stringify(valueData));
       });
     }
   }
