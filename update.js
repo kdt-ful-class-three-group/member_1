@@ -70,6 +70,8 @@ const server = http.createServer((req, res) => {
         //객체로 변경된 기존 데이터에 새로 받아온 데이터 추가
         originObj.push(bodyObj)
         console.log(originObj)
+        //객체를 문자열로 바꾼 후 저장 필요
+        fs.writeFileSync('word.json',JSON.stringify(originObj))
       })
     }
   }
