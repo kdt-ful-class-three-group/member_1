@@ -17,7 +17,12 @@ const server = http.createServer((req, res) => {
   }
   if (req.method === "POST") {
     if (req.url === "/as") {
-      req.on("data", (data) => {});
+      req.on("data", (data) => {
+        let cfData = data.toString();
+        console.log(cfData);
+        //바뀐 aTag에 해당하는 페이지 생성
+        //가져온 데이터를 JSON으로 저장
+      });
     }
   }
 });
