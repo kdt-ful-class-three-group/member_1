@@ -51,7 +51,7 @@ const server = http.createServer((req, res) => {
       //data 입력받은 후
       req.on('end',()=>{
         //입력한 데이터에 대해 객체로 변경
-        let bodyObj = qs.parse(body.toString)
+        let bodyObj = qs.parse(body.toString())
         console.log(bodyObj)
 
         //파일을 업데이트하기 위한 빈 배열 생성
@@ -65,7 +65,11 @@ const server = http.createServer((req, res) => {
         let origin = fs.readFileSync('word.json').toString()
         console.log(origin)
         //json에 저장된 데이터는 문자열, 객체로 변경이 필요
-        console.log(JSON.parse(origin))
+        let originObj = JSON.parse(origin)
+        console.log(originObj)
+        //객체로 변경된 기존 데이터에 새로 받아온 데이터 추가
+        originObj.push(bodyObj)
+        console.log(originObj)
       })
     }
   }
