@@ -43,9 +43,12 @@ const server = http.createServer((req, res) => {
   if (req.method === "POST") {
     if (req.url === "/update") {
       //data입력 받을 때
+      let body = [];
       req.on("data", (data) => {
         console.log(data);
+        body.push(data);
       });
+      //data 입력받은 후
     }
   }
 });
