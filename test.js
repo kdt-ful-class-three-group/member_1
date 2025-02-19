@@ -27,10 +27,15 @@ function movePage() {
         <h3>가격</h3>
         <p>${obj.price}</p>
       </section>
+      <section>
+        <a href='/test.html'>테스트</a>
+      </section>
     </div>
   </body>
 </html>
   `;
+
+  return string;
 }
 
 const server = http.createServer((req, res) => {
