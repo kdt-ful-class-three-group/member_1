@@ -2,6 +2,8 @@ const http = require("http");
 const fs = require("fs");
 const qs = require("querystring");
 
+//디버그 시작
+
 const server = http.createServer((req, res) => {
   //GET
   console.log(req.method, " ", req.url);
