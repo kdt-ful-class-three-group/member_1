@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      body {
+        margin: 0;
+        padding: 0;
+        width: 100%;
+        height: 100vh;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+      #root {
+        margin: 0;
+        padding: 0;
+        width: 100%;
+        height: 50%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+      #root > div {
+        width: 100px;
+        height: 150px;
+        border: 1px solid black;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-evenly;
+      }
+      #root > div button {
+        font-size: 30px;
+        background-color: #fff;
+        border: none;
+        cursor: pointer;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="root">
+      <h1>테스트</h1>
+      <div>
+        <p>오늘</p>
+        <button type="button">+</button>
+      </div>
+    </div>
+    <div id="modal">
+      <form action="/as" method="post">
+        <input type="text" name="brand" placeholder="브랜드 입력" />
+        <input type="text" name="shot" placeholder="숫자만 입력" />
+        <input type="text" name="price" placeholder="숫자만 입력" />
+        <button type="submit">추가하기</button>
+      </form>
+    </div>
+    <script>
+      //추가하기
+      let addBtn = document.querySelector('button[type="submit"]');
+      addBtn.addEventListener("click", () => {
+        document.querySelector('button[type="button"]').remove();
+        let aTag = document.createElement("a");
+        aTag.href = "/move.html";
+        aTag.innerText = "🧊";
+        let div = document.querySelector("#root>div");
+        div.appendChild(aTag);
+      });
+    </script>
+  </body>
+</html>
