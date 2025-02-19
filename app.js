@@ -26,6 +26,8 @@ const server = http.createServer((req, res) => {
         console.log(data.toString());
         let dataObj = qs.parse(data.toString());
         console.log(dataObj);
+        let jsonData = JSON.stringify(dataObj);
+        console.log(jsonData);
       });
       let page = fs.readFileSync("index.html");
       res.writeHead(200, { "content-location": "/" });
