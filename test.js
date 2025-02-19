@@ -48,6 +48,8 @@ const server = http.createServer((req, res) => {
       res.end();
     }
     //read
+    if (req.url === "/move.html") {
+    }
   }
   if (req.method === "POST") {
     if (req.url === "/as") {
