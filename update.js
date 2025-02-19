@@ -33,9 +33,10 @@ const qs = require("querystring");
 const server = http.createServer((req, res) => {
   //GET
   if (req.method === "GET") {
-    if (req.method === "/") {
+    if (req.url === "/") {
+      let page = indexPage();
       res.writeHead(200, { "content-type": "utf-8; text/html" });
-      res.write(indexPage());
+      res.write(page);
       res.end();
     }
   }
