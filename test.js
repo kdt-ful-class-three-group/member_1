@@ -27,7 +27,6 @@ const server = http.createServer((req, res) => {
       });
       req.on("end", () => {
         console.log(qs.parse(body));
-        //write
       });
     }
   }
