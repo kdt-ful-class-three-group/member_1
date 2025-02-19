@@ -28,7 +28,7 @@ function movePage(obj) {
         <p>${obj.price}</p>
       </section>
       <section>
-        <a href='/test.html'>테스트</a>
+        <a href='/delete'>삭제</a>
       </section>
     </div>
   </body>
@@ -51,6 +51,15 @@ const server = http.createServer((req, res) => {
     if (req.url === "/move.html") {
       let page = fs.readFileSync("move.html");
       res.writeHead(200, { "content-type": "utf-8;text/html" });
+      res.write(page);
+      res.end();
+    }
+    //delete
+    if (req.url === "/delete") {
+      fs.unlinkSync("move.html");
+      fs.writeFileSync("coffee.json", "");
+      let page = fs.readFileSync("test.html");
+      res.writeHead(302, { location: "/test.html" });
       res.write(page);
       res.end();
     }
