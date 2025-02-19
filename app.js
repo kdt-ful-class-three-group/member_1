@@ -19,8 +19,7 @@ const server = http.createServer((req, res) => {
       readPage(res, "index.html", "utf-8;text/html");
     }
     if (req.url === "/plus.html") {
-      let plusHtml = readPage(res, "plus.html", "utf-8;text/html");
-      console.log(plusHtml.toString());
+      readPage(res, "plus.html", "utf-8;text/html");
     }
   }
   //POST
