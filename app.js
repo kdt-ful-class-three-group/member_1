@@ -16,7 +16,8 @@ const server = http.createServer((req, res) => {
   console.log(req.method, " ", req.url);
   if (req.method === "GET") {
     if (req.url === "/") {
-      readPage(res, "index.html", "utf-8;text/html");
+      let a = readPage(res, "index.html", "utf-8;text/html");
+      console.log("/", a.toString());
     }
     if (req.url === "/plus.html") {
       let page = fs.readFileSync("plus.html");
