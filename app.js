@@ -16,14 +16,11 @@ const server = http.createServer((req, res) => {
   console.log(req.method, " ", req.url);
   if (req.method === "GET") {
     if (req.url === "/") {
-      let a = readPage(res, "index.html", "utf-8;text/html");
-      console.log("/", a.toString());
+      readPage(res, "index.html", "utf-8;text/html");
     }
     if (req.url === "/plus.html") {
-      let page = fs.readFileSync("plus.html");
-      res.writeHead(200, { "content-type": "utf-8;text/html" });
-      res.write(page);
-      res.end();
+      let plusHtml = readPage(res, "plus.html", "utf-8;text/html");
+      console.log(plusHtml.toString());
     }
   }
   //POST
