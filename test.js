@@ -69,7 +69,7 @@ const server = http.createServer((req, res) => {
         let json = [];
         json.push(valueData);
         //write + update
-        fs.appendFileSync("coffee.json", JSON.stringify(json));
+        fs.writeFileSync("coffee.json", JSON.stringify(json));
         fs.writeFileSync("move.html", movePage(valueData));
       });
     }
