@@ -49,6 +49,13 @@ const server = http.createServer((req, res) => {
         body.push(data);
       });
       //data 입력받은 후
+      req.on('end',()=>{
+        console.log(body.toString())
+        if(!fs.existsSync('word.js')){
+          fs.writeFileSync('word.js',[])
+        }
+        let originData = fs.readFileSync('word.js')
+      })
     }
   }
 });
