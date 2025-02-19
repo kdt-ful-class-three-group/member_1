@@ -41,7 +41,7 @@ function movePage(obj) {
 const server = http.createServer((req, res) => {
   console.log(`${req.method}  ${req.url}`);
   if (req.method === "GET") {
-    if (req.url === "/") {
+    if (req.url === "/" || req.url === "/test.html") {
       let page = fs.readFileSync("test.html");
       res.writeHead(200, { "content-type": "utf-8; text/html" });
       res.write(page);
@@ -50,7 +50,7 @@ const server = http.createServer((req, res) => {
     //read
     if (req.url === "/move.html") {
       let page = fs.readFileSync("move.html");
-      res.writeHead(200, { "content-type": "text/css" });
+      res.writeHead(200, { "content-type": "utf-8;text/html" });
       res.write(page);
       res.end();
     }
