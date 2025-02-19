@@ -28,7 +28,7 @@ function movePage(obj) {
         <p>${obj.price}</p>
       </section>
       <section>
-        <a href='/test.html'>테스트</a>
+        <a href='/delete'>삭제</a>
       </section>
     </div>
   </body>
