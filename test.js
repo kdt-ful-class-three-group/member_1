@@ -49,6 +49,10 @@ const server = http.createServer((req, res) => {
     }
     //read
     if (req.url === "/move.html") {
+      let page = fs.readFileSync("move.html");
+      res.writeHead(200, { "content-type": "text/css" });
+      res.write(page);
+      res.end();
     }
   }
   if (req.method === "POST") {
