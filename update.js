@@ -50,10 +50,15 @@ const server = http.createServer((req, res) => {
       });
       //data 입력받은 후
       req.on('end',()=>{
-        console.log(body.toString())
+        //입력한 데이터에 대해 객체로 변경
+        let bodyObj = qs.parse(body.toString)
+        console.log(bodyObj)
+
+        //파일을 업데이트하기 위한 빈 배열 생성
         let dataArr = []
-        if(!fs.existsSync('word.js')){
-          fs.writeFileSync('word.js',JSON.stringify(dataArr))
+        //파일이 없으면 json파일을 만들고 빈 배열 넣어주기기
+        if(!fs.existsSync('word.json')){
+          fs.writeFileSync('word.json',JSON.stringify(dataArr))
         }
         // let origin = fs.readFileSync('word.js')
         // let originArr=[]
