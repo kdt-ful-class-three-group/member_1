@@ -3,7 +3,7 @@ const fs = require("fs");
 const qs = require("querystring");
 
 function readPage(res, file, type) {
-  let page = fs.readFile(file);
+  let page = fs.readFileSync(file);
   res.writeHead(200, { "content-type": type });
   res.write(page);
   res.end();
