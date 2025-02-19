@@ -15,9 +15,14 @@ const server = http.createServer((req, res) => {
       res.end();
     }
   }
+  if (req.method === "POST") {
+    if (req.url === "/as") {
+      req.on("data", (data) => {});
+    }
+  }
 });
 
 PORT = 3030;
-server.listen(200, () => {
+server.listen(PORT, () => {
   console.log(`http://localhost:${PORT}`);
 });
