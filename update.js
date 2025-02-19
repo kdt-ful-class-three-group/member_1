@@ -6,3 +6,10 @@
 const http = require("http");
 const fs = require("fs");
 const qs = require("querystring");
+
+const server = http.createServer((req, res) => {});
+
+PORT = 3060;
+server.listen(PORT, () => {
+  console.log(`http://localhost:${PORT}`);
+});
