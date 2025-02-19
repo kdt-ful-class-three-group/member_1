@@ -66,8 +66,10 @@ const server = http.createServer((req, res) => {
       req.on("end", () => {
         let valueData = qs.parse(body);
         console.log(valueData);
+        let json = [];
+        json.push(JSON.stringify(valueData));
         //write + update
-        fs.appendFileSync("coffee.json", JSON.stringify(valueData));
+        fs.appendFileSync("coffee.json", json);
         fs.writeFileSync("move.html", movePage(valueData));
       });
     }
