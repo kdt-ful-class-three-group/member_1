@@ -9,6 +9,7 @@
     <div id="root">
       <h1>테스트</h1>
       <div>
+        <p>오늘</p>
         <button type="button">+</button>
       </div>
     </div>
@@ -20,5 +21,11 @@
         <button type="submit">추가하기</button>
       </form>
     </div>
+    <script>
+      let addBtn = document.querySelector('button[type="submit"]');
+      addBtn.addEventListener("click", () => {
+        let checkBtn = document.querySelector('button[type="button"]');
+      });
+    </script>
   </body>
 </html>
