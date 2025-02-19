@@ -2,6 +2,11 @@ const http = require("http");
 const fs = require("fs");
 const qs = require("querystring");
 
+// '/' 에대한 readfile : read
+// post에서 writefile(/move.html), json파일 : write
+// move.html 안에 수정하기 버튼 -> writefile : update
+// move.html 안에 삭제하기 버튼 -> unlink
+
 const server = http.createServer((req, res) => {
   console.log(`${req.method}  ${req.url}`);
   if (req.method === "GET") {
