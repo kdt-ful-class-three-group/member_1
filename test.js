@@ -56,6 +56,10 @@ const server = http.createServer((req, res) => {
     }
     //delete
     if (req.url === "/delete") {
+      fs.unlinkSync("move.html");
+      res.writeHead(200, { "content-location": "/" });
+      res.write(fs.readFileSync("test.hml"));
+      res.end();
     }
   }
   if (req.method === "POST") {
@@ -69,8 +73,16 @@ const server = http.createServer((req, res) => {
       req.on("end", () => {
         let valueData = qs.parse(body);
         console.log(valueData);
+        let arr = [];
+        arr.push(JSON.stringify(valueData));
+        console.log(jsonData);
         //write
-        fs.writeFileSync("coffee.json", JSON.stringify(valueData));
+        fs.writeFileSync("coffee.json", JSON.stringify(arr));
+        //1. 파일이 있는 지 확인
+        //2. 없으면 빈 파일 만들기
+        //2-1. 입력한 내용 넣기
+        //3. 있으면 기존의 내용 가져오기
+        //4. 기존 내용에 내용 추가
         fs.writeFileSync("move.html", movePage(valueData));
       });
     }
