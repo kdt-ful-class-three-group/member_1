@@ -19,6 +19,14 @@ function movePage() {
   <body>
     <div id="root">
       <h1>오늘 아아</h1>
+      <section>
+        <h3>브랜드</h3>
+        <p>${obj.brand}</p>
+        <h3>샷</h3>
+        <p>${obj.shot}</p>
+        <h3>가격</h3>
+        <p>${obj.price}</p>
+      </section>
     </div>
   </body>
 </html>
@@ -45,7 +53,7 @@ const server = http.createServer((req, res) => {
       });
       req.on("end", () => {
         let valueData = qs.parse(body);
-        console.log(qs.parse(body));
+        console.log(valueData);
         //write
       });
     }
