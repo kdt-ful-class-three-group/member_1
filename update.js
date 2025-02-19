@@ -51,10 +51,13 @@ const server = http.createServer((req, res) => {
       //data 입력받은 후
       req.on('end',()=>{
         console.log(body.toString())
+        let dataArr = []
         if(!fs.existsSync('word.js')){
-          fs.writeFileSync('word.js',[])
+          fs.writeFileSync('word.js',JSON.stringify(dataArr))
         }
-        let originData = fs.readFileSync('word.js')
+        // let origin = fs.readFileSync('word.js')
+        // let originArr=[]
+        // originArr.push(origin)
       })
     }
   }
