@@ -2,6 +2,8 @@ const http = require("http");
 const fs = require("fs");
 const qs = require("querystring");
 
+//디버그 시작
+
 const server = http.createServer((req, res) => {
   //GET
   console.log(req.method, " ", req.url);
@@ -10,10 +12,12 @@ const server = http.createServer((req, res) => {
       let page = fs.readFileSync("index.html");
       res.writeHead(200, { "content-type": "utf-8;text/html" });
       res.write(page);
+      //page = Buffer(3624) [60,33,...]
       res.end();
     }
     if (req.url === "/plus.html") {
       let page = fs.readFileSync("plus.html");
+      //page = Buffer(2005) [60,33,...]
       res.writeHead(200, { "content-type": "utf-8;text/html" });
       res.write(page);
       res.end();
@@ -33,6 +37,7 @@ const server = http.createServer((req, res) => {
       res.writeHead(200, { "content-location": "/" });
       res.write(page);
       res.end();
+      //form을 작성하면 res응답 후 req로 가져온 데이터에 대한 과정 진행함
     }
   }
 });
