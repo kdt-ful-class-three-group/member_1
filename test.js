@@ -57,8 +57,10 @@ const server = http.createServer((req, res) => {
     //delete
     if (req.url === "/delete") {
       fs.unlinkSync("move.html");
+      fs.writeFileSync("coffee.json", "");
+      let page = fs.readFileSync("test.html");
       res.writeHead(302, { location: "/test.html" });
-      res.write(fs.readFileSync("test.hml"));
+      res.write(page);
       res.end();
     }
   }
@@ -74,7 +76,7 @@ const server = http.createServer((req, res) => {
         let valueData = qs.parse(body);
         console.log(valueData);
         let arr = [];
-        arr.push(JSON.stringify(valueData));
+        arr.push(valueData);
         console.log(arr);
         //write
         fs.writeFileSync("coffee.json", JSON.stringify(arr));
