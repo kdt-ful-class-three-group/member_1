@@ -55,6 +55,8 @@ const server = http.createServer((req, res) => {
       res.end();
     }
     //delete
+    if (req.url === "/delete") {
+    }
   }
   if (req.method === "POST") {
     if (req.url === "/as") {
