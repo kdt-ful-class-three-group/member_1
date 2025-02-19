@@ -1,5 +1,5 @@
 //[x] input 1개와 button[type="submit"] 1개 만듦
-//[ ] server 생성
+//[x] server 생성
 //[ ] button 누르면 json 파일 생성
 //[ ] button 여러 번 누르면 데이터 json파일에 추가됨
 
@@ -14,7 +14,7 @@ function indexPage() {
       </head>
     <body>
       <div id="root">
-        <h1>업데이트 테스트</h1>
+        <h1>테스트</h1>
         <form action='/update' method='POST'>
           <input type='text' name='word' placeholder='단어'>
           <button type='submit'>추가</button>
@@ -34,13 +34,20 @@ const server = http.createServer((req, res) => {
   //GET
   if (req.method === "GET") {
     if (req.url === "/") {
-      let page = indexPage();
       res.writeHead(200, { "content-type": "utf-8; text/html" });
-      res.write(page);
+      res.write(indexPage());
       res.end();
     }
   }
   //POST
+  if (req.method === "POST") {
+    if (req.url === "/update") {
+      //data입력 받을 때
+      req.on("data", (data) => {
+        console.log(data);
+      });
+    }
+  }
 });
 
 PORT = 3060;
