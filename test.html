@@ -24,8 +24,12 @@
     <script>
       let addBtn = document.querySelector('button[type="submit"]');
       addBtn.addEventListener("click", () => {
-        let checkBtn = document.querySelector('button[type="button"]');
-        checkBtn.textContent = "🧊";
+        document.querySelector('button[type="button"]').remove();
+        let aTag = document.createElement("a");
+        aTag.href = "/move.html";
+        aTag.innerText = "🧊";
+        let div = document.querySelector("#root>div");
+        div.appendChild(aTag);
       });
     </script>
   </body>
