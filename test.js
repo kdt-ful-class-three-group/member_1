@@ -57,7 +57,7 @@ const server = http.createServer((req, res) => {
     //delete
     if (req.url === "/delete") {
       fs.unlinkSync("move.html");
-      res.writeHead(200, { "content-location": "/" });
+      res.writeHead(302, { location: "/test.html" });
       res.write(fs.readFileSync("test.hml"));
       res.end();
     }
@@ -75,7 +75,7 @@ const server = http.createServer((req, res) => {
         console.log(valueData);
         let arr = [];
         arr.push(JSON.stringify(valueData));
-        console.log(jsonData);
+        console.log(arr);
         //write
         fs.writeFileSync("coffee.json", JSON.stringify(arr));
         //1. 파일이 있는 지 확인
