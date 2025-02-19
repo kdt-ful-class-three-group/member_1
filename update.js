@@ -32,6 +32,10 @@ const qs = require("querystring");
 
 const server = http.createServer((req, res) => {
   //GET
+  if (req.method === "GET") {
+    if (req.method === "/") {
+    }
+  }
   //POST
 });
 
