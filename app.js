@@ -2,6 +2,12 @@ const http = require("http");
 const fs = require("fs");
 const qs = require("querystring");
 
+//fs
+//create - write, append
+//read - read
+//update - write, append
+//delete - unlink
+
 const server = http.createServer((req, res) => {
   //GET
   console.log(req.method, " ", req.url);
