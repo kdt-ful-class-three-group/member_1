@@ -1,5 +1,6 @@
 const http = require("http");
 const fs = require("fs");
+const qs = require("querystring");
 
 //[ ] 페이지를 js에서 만들면
 //+로 링크 이동 -> button누르면 데이터 가져옴
@@ -17,11 +18,14 @@ const server = http.createServer((req, res) => {
   }
   if (req.method === "POST") {
     if (req.url === "/as") {
+      let body = "";
       req.on("data", (data) => {
-        let cfData = data.toString();
-        console.log(cfData);
+        body += data;
         //바뀐 aTag에 해당하는 페이지 생성
         //가져온 데이터를 JSON으로 저장
+      });
+      req.on("end", () => {
+        console.log(qs.parse(body));
       });
     }
   }
