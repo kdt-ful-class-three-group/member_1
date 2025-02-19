@@ -62,8 +62,10 @@ const server = http.createServer((req, res) => {
         }
         //파일이 있을 때
         //기존 파일의 데이터 가져오기기
-        let origin = fs.readFileSync('word.json')
-        console.log(origin.toString())
+        let origin = fs.readFileSync('word.json').toString()
+        console.log(origin)
+        //json에 저장된 데이터는 문자열, 객체로 변경이 필요
+        console.log(JSON.parse(origin))
       })
     }
   }
