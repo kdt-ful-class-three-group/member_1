@@ -2,6 +2,15 @@ const http = require("http");
 const fs = require("fs");
 const qs = require("querystring");
 
+function readPage(res, file, type) {
+  let page = fs.readFile(file);
+  res.writeHead(200, { "content-type": type });
+  res.write(page);
+  res.end();
+
+  return page;
+}
+
 const server = http.createServer((req, res) => {
   //GET
   console.log(req.method, " ", req.url);
