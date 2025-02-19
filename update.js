@@ -60,9 +60,10 @@ const server = http.createServer((req, res) => {
         if(!fs.existsSync('word.json')){
           fs.writeFileSync('word.json',JSON.stringify(dataArr))
         }
-        // let origin = fs.readFileSync('word.js')
-        // let originArr=[]
-        // originArr.push(origin)
+        //파일이 있을 때
+        //기존 파일의 데이터 가져오기기
+        let origin = fs.readFileSync('word.json')
+        console.log(origin)
       })
     }
   }
