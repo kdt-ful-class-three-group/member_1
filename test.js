@@ -7,6 +7,24 @@ const qs = require("querystring");
 // move.html 안에 수정하기 버튼 -> writefile : update
 // move.html 안에 삭제하기 버튼 -> unlink
 
+function movePage() {
+  let string = `
+  <!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div id="root">
+      <h1>오늘 아아</h1>
+    </div>
+  </body>
+</html>
+  `;
+}
+
 const server = http.createServer((req, res) => {
   console.log(`${req.method}  ${req.url}`);
   if (req.method === "GET") {
@@ -26,6 +44,7 @@ const server = http.createServer((req, res) => {
         //가져온 데이터를 JSON으로 저장
       });
       req.on("end", () => {
+        let valueData = qs.parse(body);
         console.log(qs.parse(body));
         //write
       });
